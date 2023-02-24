@@ -1,0 +1,40 @@
+//BOOTSTRAP CUSTOMIZING
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Default variable overrides
+$primary: #FDC000;
+// $primary 변수의 색상은 variables.scss 파일 내에 저장되어 있기 때문에
+// variables.scss 파일을 import하기 전에 정의해주어야 함
+
+// 엥 근데 저번에 배울 때는 import한 후에 밑에서
+// $theme-colors: {
+//  "primary": $primary,
+//  "secondary": $secondary,
+//  ...    
+// }
+// 이렇게 했지 않나??
+
+// 이걸 import 위에서 작성하게 되면 $primary, $secondary 등의 변수가 선언이 되어있지 않기 때문에 에러가 난다.
+// 그렇기 때문에 import를 통해 variables.scss 파일 내에 선언되어 있는 변수를 불러와서 바꿔야 한다.
+// $primary: #FDC000 이렇게 하는 건 내가 변수를 선언하는 것이라서 import위에 작성해야함
+// 모든 변수에 대해 색을 정의한다면 import 위에 $theme-colors를 작성해도 무방함. 오히려 이건 권장됨.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
+// Required
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// IMPORT BOOTSTRAP
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
